@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OS Scheduling Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans transition-all duration-500">
+
+  <!-- Hero Section -->
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-bold animate-fade-in-down">Process Scheduling Visualizer</h1>
+    <p class="text-gray-400 mt-2">Understand FCFS, SJF, Round Robin & Priority Scheduling</p>
+    <button id="startBtn" class="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Get Started</button>
+  </section>
+
+  <!-- Algorithm Selector -->
+  <section class="p-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">Choose Scheduling Algorithm</h2>
+    <div class="flex gap-4 flex-wrap">
+      <label><input type="radio" name="algorithm" value="FCFS" checked /> FCFS</label>
+      <label><input type="radio" name="algorithm" value="SJF" /> SJF</label>
+      <label><input type="radio" name="algorithm" value="RR" /> Round Robin</label>
+      <label><input type="radio" name="algorithm" value="Priority" /> Priority</label>
+    </div>
+  </section>
+
+  <!-- Input Form -->
+  <section class="p-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">Add Process</h2>
+    <div class="grid grid-cols-4 gap-4 mb-4">
+      <input type="text" placeholder="PID" id="pid" class="p-2 rounded text-black" />
+      <input type="number" placeholder="Arrival Time" id="arrival" class="p-2 rounded text-black" />
+      <input type="number" placeholder="Burst Time" id="burst" class="p-2 rounded text-black" />
+      <input type="number" placeholder="Priority (optional)" id="priority" class="p-2 rounded text-black" />
+    </div>
+    <button onclick="addProcess()" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition">Add</button>
+
+    <table class="mt-6 w-full text-left">
+      <thead>
+        <tr class="text-gray-300">
+          <th>PID</th>
+          <th>Arrival</th>
+          <th>Burst</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody id="processTable" class="text-gray-100"></tbody>
+    </table>
+  </section>
+
+  <!-- Run & Output -->
+  <section class="p-6 max-w-4xl mx-auto">
+    <button onclick="runSimulation()" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded transition">Run Simulation</button>
+    <div id="output" class="mt-6 space-y-4"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-gray-500 text-sm">
+    Created By Team Enfrocers | B.Tech Cse
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

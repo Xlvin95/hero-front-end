@@ -1,0 +1,15 @@
+{
+  "name": "process-flow-visualizer",
+  "version": "1.0.0",
+  "description": "HERO FRONT-END",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Elvin",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.1"
+  }
+}
